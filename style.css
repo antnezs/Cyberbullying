@@ -1,0 +1,31 @@
+.hero {
+  min-height: 90vh;
+  background: url("https://res.cloudinary.com/dc8deo9mq/image/upload/v1761588564/2150037598_1_-fotor-2025102715859_nij9mk.png") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  animation: fadeIn 1.5s ease;
+}
+
+/* Efeito de fade para o texto aparecer */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
