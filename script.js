@@ -20,12 +20,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Animate statistics counter
+  // Animate statistics counter - ANIMAÇÃO RÁPIDA
   const statNumbers = document.querySelectorAll('.stat-number');
   
   function animateCounter(element) {
     const target = parseInt(element.getAttribute('data-count'));
-    const duration = 2000; // 2 seconds
+    const duration = 800; // 0.8 seconds - MUITO MAIS RÁPIDO
     const step = target / (duration / 16); // 60fps
     let current = 0;
     
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.3 }); // Dispara mais cedo
   
   statNumbers.forEach(number => {
     observer.observe(number);

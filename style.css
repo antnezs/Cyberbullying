@@ -295,14 +295,6 @@ body {
   margin-top: 0.2rem;
 }
 
-/* Adicionar ao CSS */
-.sources-note {
-  margin-top: 2rem;
-  text-align: center;
-  color: var(--secondary-color);
-  font-style: italic;
-}
-
 /* CARDS */
 .cards-grid {
   display: grid;
@@ -384,8 +376,9 @@ body {
 /* STATISTICS */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .stat-item {
@@ -394,18 +387,37 @@ body {
   background-color: var(--white);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .stat-number {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--info-color);
-  margin-bottom: 0.5rem;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--danger-color);
+  margin-bottom: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .stat-label {
+  color: var(--dark-color);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.sources-note {
+  margin-top: 2rem;
+  text-align: center;
   color: var(--secondary-color);
-  font-weight: 500;
+  font-style: italic;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: var(--border-radius);
 }
 
 /* SUPPORT */
@@ -603,5 +615,13 @@ body {
   
   .card, .prevention-item, .support-card {
     padding: 1.5rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-number {
+    font-size: 2.8rem;
   }
 }
