@@ -1,15 +1,87 @@
-document.addEventListener('DOMContentLoaded', () => {
-  if (window.lucide) lucide.createIcons();
-
-  // animações simples ao rolar
-  const fadeEls = document.querySelectorAll('.card, section h2');
-  const observer = new IntersectionObserver(entries => {
+// script.js
+document.addEventListener('DOMContentLoaded', function() {
+  // Mobile menu toggle
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+  
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+      navToggle.classList.toggle('active');
+    });
+    
+    // Close menu when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
+      });
+    });
+  }
+  
+  // Animate statistics counter
+  const statNumbers = document.querySelectorAll('.stat-number');
+  
+  function animateCounter(element) {
+    const target = parseInt(element.getAttribute('data-count'));
+    const duration = 2000; // 2 seconds
+    const step = target / (duration / 16); // 60fps
+    let current = 0;
+    
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      element.textContent = Math.floor(current);
+    }, 16);
+  }
+  
+  // Intersection Observer for counter animation
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.2 });
-
-  fadeEls.forEach(el => observer.observe(el));
+  }, { threshold: 0.5 });
+  
+  statNumbers.forEach(number => {
+    observer.observe(number);
+  });
+  
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const offsetTop = targetElement.offsetTop - 80; // Adjust for fixed navbar
+        
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+  
+  // Add scroll effect to navbar
+  window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 100) {
+      navbar.style.backgroundColor = 'rgba(33, 37, 41, 0.95)';
+      navbar.style.backdropFilter = 'blur(10px)';
+    } else {
+      navbar.style.backgroundColor = 'var(--dark-color)';
+      navbar.style.backdropFilter = 'none';
+    }
+  });
 });

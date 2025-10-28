@@ -3,157 +3,291 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desconecta o Ódio - Cyberbullying</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="icon" href="https://openclipart.org/image/800px/216528">
+  <meta name="description" content="Campanha contra o cyberbullying - Desconecta o Ódio. Informações, prevenção e apoio para vítimas de violência digital.">
+  <title>Desconecta o Ódio - Combate ao Cyberbullying</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💙</text></svg>">
 </head>
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
-  <div class="container">
-    <a class="navbar-brand fw-bold text-info" href="#">
-      <i data-lucide="zap"></i> Desconecta o Ódio
+<nav class="navbar">
+  <div class="nav-container">
+    <a class="nav-brand" href="#inicio">
+      <i class="fas fa-bolt"></i> Desconecta o Ódio
     </a>
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-      <span class="navbar-toggler-icon"></span>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+      <span class="hamburger"></span>
     </button>
-    <div class="collapse navbar-collapse" id="menu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a href="#sobre" class="nav-link">Sobre</a></li>
-        <li class="nav-item"><a href="#tipos" class="nav-link">Tipos</a></li>
-        <li class="nav-item"><a href="#prevencao" class="nav-link">Prevenção</a></li>
-        <li class="nav-item"><a href="#apoio" class="nav-link">Apoio</a></li>
-      </ul>
-    </div>
+    <ul class="nav-menu" id="navMenu">
+      <li class="nav-item"><a href="#inicio" class="nav-link">Início</a></li>
+      <li class="nav-item"><a href="#sobre" class="nav-link">Sobre</a></li>
+      <li class="nav-item"><a href="#tipos" class="nav-link">Tipos</a></li>
+      <li class="nav-item"><a href="#prevencao" class="nav-link">Prevenção</a></li>
+      <li class="nav-item"><a href="#estatisticas" class="nav-link">Estatísticas</a></li>
+      <li class="nav-item"><a href="#apoio" class="nav-link">Apoio</a></li>
+    </ul>
   </div>
 </nav>
 
 <!-- HERO -->
-<header class="hero d-flex align-items-center text-white text-center">
-  <div class="container">
-    <h1 class="display-5 fw-bold">Cyberbullying não é piada</h1>
-    <p class="lead mt-3">O que você compartilha pode ferir. Espalhe respeito, não ódio.</p>
-    <a href="#sobre" class="btn btn-info mt-3 px-4">Saiba mais</a>
+<header id="inicio" class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">Cyberbullying não é piada</h1>
+    <p class="hero-subtitle">O que você compartilha pode ferir. Espalhe respeito, não ódio.</p>
+    <div class="hero-buttons">
+      <a href="#sobre" class="btn btn-primary">Saiba mais</a>
+      <a href="#apoio" class="btn btn-secondary">Preciso de ajuda</a>
+    </div>
   </div>
 </header>
 
 <!-- SOBRE -->
-<section id="sobre" class="py-5">
+<section id="sobre" class="section">
   <div class="container">
-    <div class="row align-items-center gy-4">
-      <div class="col-lg-6">
-        <img src="https://res.cloudinary.com/dc8deo9mq/image/upload/v1761589922/shutterstock_1215733999_hv4r8b.jpg" class="img-fluid rounded shadow" alt="Cyberbullying Ilustração">
+    <div class="section-header">
+      <h2 class="section-title">O que é Cyberbullying?</h2>
+      <p class="section-subtitle">Entenda o problema e suas consequências</p>
+    </div>
+    <div class="content-grid">
+      <div class="content-image">
+        <img src="https://images.unsplash.com/photo-1587560699334-cc4ff634909a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Cyberbullying Ilustração">
       </div>
-      <div class="col-lg-6">
-        <h2 class="fw-bold text-info">O que é Cyberbullying?</h2>
-        <p class="text-muted">Cyberbullying é o uso de tecnologias digitais — como redes sociais, mensagens ou jogos online — para intimidar, humilhar ou ofender alguém. As agressões virtuais podem causar tanto sofrimento quanto as presenciais.</p>
-        <p class="text-muted">Por trás da tela há uma pessoa de verdade. Cuidar da forma como nos comunicamos online é um ato de empatia e responsabilidade.</p>
+      <div class="content-text">
+        <p>Cyberbullying é o uso de tecnologias digitais — como redes sociais, mensagens ou jogos online — para intimidar, humilhar ou ofender alguém. As agressões virtuais podem causar tanto sofrimento quanto as presenciais, e muitas vezes têm consequências ainda mais graves devido ao alcance e permanência do conteúdo na internet.</p>
+        <p>Por trás da tela há uma pessoa de verdade. Cuidar da forma como nos comunicamos online é um ato de empatia e responsabilidade.</p>
+        <div class="alert-box">
+          <i class="fas fa-exclamation-triangle"></i>
+          <div>
+            <strong>Importante:</strong> O cyberbullying pode afetar profundamente a saúde mental, levando a ansiedade, depressão e, em casos extremos, ao suicídio.
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- TIPOS -->
-<section id="tipos" class="py-5 bg-light text-center">
+<section id="tipos" class="section section-light">
   <div class="container">
-    <h2 class="fw-bold text-info mb-4">Principais Formas de Cyberbullying</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card border-0 shadow h-100 p-3">
-          <i data-lucide="message-square-off" class="text-info mb-3 icon-lg"></i>
-          <h5 class="fw-bold">Ofensas Online</h5>
-          <p>Mensagens agressivas, comentários maldosos e ataques pessoais em redes sociais.</p>
+    <div class="section-header">
+      <h2 class="section-title">Principais Formas de Cyberbullying</h2>
+      <p class="section-subtitle">Conheça as diferentes manifestações desse problema</p>
+    </div>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-comment-slash"></i>
         </div>
+        <h3 class="card-title">Ofensas Online</h3>
+        <p class="card-text">Mensagens agressivas, comentários maldosos e ataques pessoais em redes sociais, aplicativos de mensagem e fóruns.</p>
       </div>
-      <div class="col-md-4">
-        <div class="card border-0 shadow h-100 p-3">
-          <i data-lucide="image-off" class="text-danger mb-3 icon-lg"></i>
-          <h5 class="fw-bold">Exposição Indevida</h5>
-          <p>Divulgação de fotos, vídeos ou informações privadas sem consentimento.</p>
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-image"></i>
         </div>
+        <h3 class="card-title">Exposição Indevida</h3>
+        <p class="card-text">Divulgação de fotos, vídeos ou informações privadas sem consentimento, incluindo montagens e deepfakes.</p>
       </div>
-      <div class="col-md-4">
-        <div class="card border-0 shadow h-100 p-3">
-          <i data-lucide="user-x" class="text-warning mb-3 icon-lg"></i>
-          <h5 class="fw-bold">Exclusão Social</h5>
-          <p>Bloqueio, boicote ou isolamento de pessoas em grupos online de forma intencional.</p>
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-user-times"></i>
         </div>
+        <h3 class="card-title">Exclusão Social</h3>
+        <p class="card-text">Bloqueio, boicote ou isolamento intencional de pessoas em grupos online, jogos e comunidades virtuais.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-user-secret"></i>
+        </div>
+        <h3 class="card-title">Fake Profiles</h3>
+        <p class="card-text">Criação de perfis falsos para difamar, assediar ou se passar por outra pessoa sem autorização.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-share-alt"></i>
+        </div>
+        <h3 class="card-title">Assédio Virtual</h3>
+        <p class="card-text">Perseguição constante através de mensagens indesejadas, ameaças e intimidações repetitivas.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-ban"></i>
+        </div>
+        <h3 class="card-title">Cancelamento</h3>
+        <p class="card-text">Campanhas organizadas para destruir a reputação de alguém através de boicotes e difamação em massa.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PREVENÇÃO -->
-<section id="prevencao" class="py-5 text-white prev-section">
-  <div class="container text-center">
-    <h2 class="fw-bold mb-4">Como Prevenir o Cyberbullying</h2>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
-        <div class="card bg-transparent border-light p-3 h-100">
-          <i data-lucide="shield" class="icon-lg mb-3"></i>
-          <h5>Proteja Suas Informações</h5>
-          <p>Mantenha seus perfis privados e pense antes de compartilhar dados pessoais.</p>
+<section id="prevencao" class="section section-dark">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Como Prevenir o Cyberbullying</h2>
+      <p class="section-subtitle">Ações práticas para combater a violência digital</p>
+    </div>
+    <div class="prevention-grid">
+      <div class="prevention-item">
+        <div class="prevention-icon">
+          <i class="fas fa-shield-alt"></i>
         </div>
+        <h3 class="prevention-title">Proteja Suas Informações</h3>
+        <p class="prevention-text">Mantenha seus perfis privados, use senhas fortes e pense bem antes de compartilhar dados pessoais online.</p>
       </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="card bg-transparent border-light p-3 h-100">
-          <i data-lucide="alert-octagon" class="icon-lg mb-3"></i>
-          <h5>Denuncie</h5>
-          <p>Use as ferramentas das redes sociais e órgãos competentes para denunciar abusos.</p>
+      <div class="prevention-item">
+        <div class="prevention-icon">
+          <i class="fas fa-flag"></i>
         </div>
+        <h3 class="prevention-title">Denuncie</h3>
+        <p class="prevention-text">Use as ferramentas das redes sociais para reportar conteúdo ofensivo e procure autoridades quando necessário.</p>
       </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="card bg-transparent border-light p-3 h-100">
-          <i data-lucide="heart" class="icon-lg mb-3"></i>
-          <h5>Seja Empático</h5>
-          <p>Pense no impacto das suas palavras. Gentileza é mais forte que qualquer ataque.</p>
+      <div class="prevention-item">
+        <div class="prevention-icon">
+          <i class="fas fa-heart"></i>
         </div>
+        <h3 class="prevention-title">Seja Empático</h3>
+        <p class="prevention-text">Pense no impacto das suas palavras antes de publicar. Gentileza é mais forte que qualquer ataque.</p>
       </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="card bg-transparent border-light p-3 h-100">
-          <i data-lucide="users" class="icon-lg mb-3"></i>
-          <h5>Apoie a Vítima</h5>
-          <p>Não se cale. Mostre solidariedade e incentive a busca por ajuda.</p>
+      <div class="prevention-item">
+        <div class="prevention-icon">
+          <i class="fas fa-users"></i>
         </div>
+        <h3 class="prevention-title">Apoie a Vítima</h3>
+        <p class="prevention-text">Não se cale diante do cyberbullying. Mostre solidariedade e incentive a busca por ajuda profissional.</p>
+      </div>
+      <div class="prevention-item">
+        <div class="prevention-icon">
+          <i class="fas fa-lock"></i>
+        </div>
+        <h3 class="prevention-title">Bloqueie Agressores</h3>
+        <p class="prevention-text">Não hesite em bloquear pessoas que praticam cyberbullying para proteger seu bem-estar digital.</p>
+      </div>
+      <div class="prevention-item">
+        <div class="prevention-icon">
+          <i class="fas fa-save"></i>
+        </div>
+        <h3 class="prevention-title">Guarde Evidências</h3>
+        <p class="prevention-text">Salve prints e registros de mensagens ofensivas para usar em possíveis denúncias às autoridades.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- APOIO -->
-<section id="apoio" class="py-5">
-  <div class="container text-center">
-    <h2 class="fw-bold text-info mb-4">Canais de Apoio</h2>
-    <p class="text-muted mb-5">Procure ajuda — você não está sozinho.</p>
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-4">
-        <div class="card border-0 shadow p-3 h-100">
-          <i data-lucide="phone-call" class="text-info mb-2"></i>
-          <h5>CVV - 188</h5>
-          <p>Apoio emocional gratuito e confidencial 24h por dia.</p>
-        </div>
+<!-- ESTATÍSTICAS -->
+<section id="estatisticas" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Estatísticas Alarmantes sobre Cyberbullying</h2>
+      <p class="section-subtitle">Dados reais que mostram a gravidade do problema no Brasil</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number" data-count="36">0</div>
+        <div class="stat-label">dos jovens brasileiros já sofreram cyberbullying</div>
       </div>
-      <div class="col-md-4">
-        <div class="card border-0 shadow p-3 h-100">
-          <i data-lucide="file-warning" class="text-danger mb-2"></i>
-          <h5>Disque 100</h5>
-          <p>Canal para denúncias de violações de direitos humanos.</p>
+      <div class="stat-item">
+        <div class="stat-number" data-count="52">0</div>
+        <div class="stat-label">das vítimas são do sexo feminino</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="82">0</div>
+        <div class="stat-label">dos casos acontecem pelo WhatsApp</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="67">0</div>
+        <div class="stat-label">envolvem insultos e xingamentos</div>
+      </div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number" data-count="45">0</div>
+        <div class="stat-label">das vítimas desenvolvem depressão</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="73">0</div>
+        <div class="stat-label">sofrem com ansiedade e pânico</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="28">0</div>
+        <div class="stat-label">tentaram suicídio após o bullying</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="91">0</div>
+        <div class="stat-label">dos agressores são conhecidos das vítimas</div>
+      </div>
+    </div>
+    <div class="sources-note">
+      <p><small>Fontes: Pesquisa Nacional de Saúde do Escolar (PeNSE), SaferNet Brasil, UNICEF Brasil</small></p>
+    </div>
+  </div>
+</section>
+
+<!-- APOIO -->
+<section id="apoio" class="section section-light">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Canais de Apoio</h2>
+      <p class="section-subtitle">Procure ajuda — você não está sozinho</p>
+    </div>
+    <div class="support-grid">
+      <div class="support-card">
+        <div class="support-icon">
+          <i class="fas fa-phone-alt"></i>
         </div>
+        <h3 class="support-title">CVV - Centro de Valorização da Vida</h3>
+        <p class="support-info">Ligue 188</p>
+        <p class="support-text">Apoio emocional gratuito e confidencial 24h por dia, todos os dias.</p>
+      </div>
+      <div class="support-card">
+        <div class="support-icon">
+          <i class="fas fa-exclamation-circle"></i>
+        </div>
+        <h3 class="support-title">Disque Direitos Humanos</h3>
+        <p class="support-info">Ligue 100</p>
+        <p class="support-text">Canal para denúncias de violações de direitos humanos, incluindo cyberbullying.</p>
+      </div>
+      <div class="support-card">
+        <div class="support-icon">
+          <i class="fas fa-balance-scale"></i>
+        </div>
+        <h3 class="support-title">SaferNet</h3>
+        <p class="support-info">www.safernet.org.br</p>
+        <p class="support-text">Organização especializada em crimes contra os direitos humanos na internet.</p>
+      </div>
+      <div class="support-card">
+        <div class="support-icon">
+          <i class="fas fa-hands-helping"></i>
+        </div>
+        <h3 class="support-title">Procure Ajuda Psicológica</h3>
+        <p class="support-info">CAPS e Postos de Saúde</p>
+        <p class="support-text">Busque apoio profissional para lidar com os efeitos do cyberbullying.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-dark text-white text-center py-4">
-  <p class="mb-1">&copy; 2025 Desconecta o Ódio</p>
-  <small class="text-secondary">Transforme a internet em um espaço de empatia e respeito 💙</small>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <i class="fas fa-bolt"></i>
+        <span>Desconecta o Ódio</span>
+      </div>
+      <p class="footer-text">Transforme a internet em um espaço de empatia e respeito</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+      <p class="footer-copy">&copy; 2025 Desconecta o Ódio. Todos os direitos reservados.</p>
+    </div>
+  </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
