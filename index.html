@@ -11,21 +11,31 @@
 </head>
 <body>
 
+<!-- Indicador de progresso de leitura -->
+<div class="reading-progress" id="readingProgress"></div>
+
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-container">
     <a class="nav-brand" href="#inicio">
       <i class="fas fa-bolt"></i> Desconecta o Ódio
     </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
-      <span class="hamburger"></span>
-    </button>
+    <div class="nav-controls">
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+        <span class="hamburger"></span>
+      </button>
+    </div>
     <ul class="nav-menu" id="navMenu">
       <li class="nav-item"><a href="#inicio" class="nav-link">Início</a></li>
       <li class="nav-item"><a href="#sobre" class="nav-link">Sobre</a></li>
       <li class="nav-item"><a href="#tipos" class="nav-link">Tipos</a></li>
       <li class="nav-item"><a href="#prevencao" class="nav-link">Prevenção</a></li>
       <li class="nav-item"><a href="#estatisticas" class="nav-link">Estatísticas</a></li>
+      <li class="nav-item"><a href="#testemunhos" class="nav-link">Testemunhos</a></li>
+      <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
       <li class="nav-item"><a href="#apoio" class="nav-link">Apoio</a></li>
     </ul>
   </div>
@@ -40,6 +50,10 @@
       <a href="#sobre" class="btn btn-primary">Saiba mais</a>
       <a href="#apoio" class="btn btn-secondary">Preciso de ajuda</a>
     </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Role para baixo</span>
+    <i class="fas fa-chevron-down"></i>
   </div>
 </header>
 
@@ -76,47 +90,71 @@
       <p class="section-subtitle">Conheça as diferentes manifestações desse problema</p>
     </div>
     <div class="cards-grid">
-      <div class="card">
+      <div class="card card-gradient">
         <div class="card-icon">
           <i class="fas fa-comment-slash"></i>
         </div>
         <h3 class="card-title">Ofensas Online</h3>
         <p class="card-text">Mensagens agressivas, comentários maldosos e ataques pessoais em redes sociais, aplicativos de mensagem e fóruns.</p>
+        <div class="card-tooltip">
+          <i class="fas fa-info-circle"></i>
+          <span class="tooltip-text">Inclui xingamentos, ameaças e comentários depreciativos</span>
+        </div>
       </div>
-      <div class="card">
+      <div class="card card-gradient">
         <div class="card-icon">
           <i class="fas fa-image"></i>
         </div>
         <h3 class="card-title">Exposição Indevida</h3>
         <p class="card-text">Divulgação de fotos, vídeos ou informações privadas sem consentimento, incluindo montagens e deepfakes.</p>
+        <div class="card-tooltip">
+          <i class="fas fa-info-circle"></i>
+          <span class="tooltip-text">Pode configurar crime de invasão de privacidade</span>
+        </div>
       </div>
-      <div class="card">
+      <div class="card card-gradient">
         <div class="card-icon">
           <i class="fas fa-user-times"></i>
         </div>
         <h3 class="card-title">Exclusão Social</h3>
         <p class="card-text">Bloqueio, boicote ou isolamento intencional de pessoas em grupos online, jogos e comunidades virtuais.</p>
+        <div class="card-tooltip">
+          <i class="fas fa-info-circle"></i>
+          <span class="tooltip-text">Causa danos psicológicos pela sensação de rejeição</span>
+        </div>
       </div>
-      <div class="card">
+      <div class="card card-gradient">
         <div class="card-icon">
           <i class="fas fa-user-secret"></i>
         </div>
         <h3 class="card-title">Fake Profiles</h3>
         <p class="card-text">Criação de perfis falsos para difamar, assediar ou se passar por outra pessoa sem autorização.</p>
+        <div class="card-tooltip">
+          <i class="fas fa-info-circle"></i>
+          <span class="tooltip-text">Configura crime de falsidade ideológica</span>
+        </div>
       </div>
-      <div class="card">
+      <div class="card card-gradient">
         <div class="card-icon">
           <i class="fas fa-share-alt"></i>
         </div>
         <h3 class="card-title">Assédio Virtual</h3>
         <p class="card-text">Perseguição constante através de mensagens indesejadas, ameaças e intimidações repetitivas.</p>
+        <div class="card-tooltip">
+          <i class="fas fa-info-circle"></i>
+          <span class="tooltip-text">Pode evoluir para stalking (perseguição)</span>
+        </div>
       </div>
-      <div class="card">
+      <div class="card card-gradient">
         <div class="card-icon">
           <i class="fas fa-ban"></i>
         </div>
         <h3 class="card-title">Cancelamento</h3>
         <p class="card-text">Campanhas organizadas para destruir a reputação de alguém através de boicotes e difamação em massa.</p>
+        <div class="card-tooltip">
+          <i class="fas fa-info-circle"></i>
+          <span class="tooltip-text">Pode causar danos profissionais e sociais irreparáveis</span>
+        </div>
       </div>
     </div>
   </div>
@@ -225,6 +263,108 @@
   </div>
 </section>
 
+<!-- TESTEMUNHOS -->
+<section id="testemunhos" class="section section-light">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Histórias Reais</h2>
+      <p class="section-subtitle">Depoimentos de quem já sofreu cyberbullying</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <p>"Aos 15 anos, colegas criaram um perfil falso com meu nome e fotos minhas. Postavam comentários ofensivos e me difamavam. Fiquei tão deprimida que parei de ir à escola por um mês."</p>
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="author-info">
+            <h4>Maria, 16 anos</h4>
+            <p>São Paulo</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <p>"No ensino médio, meus colegas me excluíram de todos os grupos online. Eu me sentia completamente invisível e sozinho. Só superei com ajuda psicológica e apoio da minha família."</p>
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="author-info">
+            <h4>João, 18 anos</h4>
+            <p>Rio de Janeiro</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <p>"Recebi mensagens anônimas me ameaçando durante meses. Tinha medo de abrir minhas redes sociais. Denunciei e com apoio consegui superar, mas foi uma experiência traumática."</p>
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="author-info">
+            <h4>Ana, 17 anos</h4>
+            <p>Belo Horizonte</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Perguntas Frequentes</h2>
+      <p class="section-subtitle">Tire suas dúvidas sobre cyberbullying</p>
+    </div>
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>O que fazer se estou sofrendo cyberbullying?</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>1. Não responda às provocações. 2. Bloqueie os agressores. 3. Salve todas as evidências (prints). 4. Denuncie nas plataformas. 5. Converse com alguém de confiança. 6. Procure ajuda profissional se necessário.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Cyberbullying é crime?</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Sim, dependendo da gravidade, pode configurar crimes como injúria, difamação, calúnia, ameaça e falsidade ideológica. A Lei 13.185/2015 institui o Programa de Combate à Intimidação Sistemática (Bullying).</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Como posso ajudar alguém que está sofrendo cyberbullying?</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Ofereça apoio emocional, incentive a pessoa a falar sobre o que está acontecendo, ajude-a a denunciar os agressores e a guardar provas. Não minimize a situação e incentive a busca por ajuda profissional.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Posso ser responsabilizado por compartilhar conteúdo ofensivo?</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Sim, compartilhar conteúdo ofensivo pode configurar participação no crime. Mesmo que você não tenha criado o conteúdo original, ao compartilhá-lo, você está contribuindo para a disseminação do material ofensivo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- APOIO -->
 <section id="apoio" class="section section-light">
   <div class="container">
@@ -287,6 +427,11 @@
     </div>
   </div>
 </footer>
+
+<!-- Botão Voltar ao Topo -->
+<button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+  <i class="fas fa-chevron-up"></i>
+</button>
 
 <script src="script.js"></script>
 </body>

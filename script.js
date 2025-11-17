@@ -1,4 +1,4 @@
-// script.js
+// script.js - ATUALIZADO COM NOVAS FUNCIONALIDADES
 document.addEventListener('DOMContentLoaded', function() {
   // Mobile menu toggle
   const navToggle = document.getElementById('navToggle');
@@ -18,6 +18,35 @@ document.addEventListener('DOMContentLoaded', function() {
         navToggle.classList.remove('active');
       });
     });
+  }
+  
+  // Tema claro/escuro
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = themeToggle.querySelector('i');
+  
+  // Verificar preferência salva ou do sistema
+  const savedTheme = localStorage.getItem('theme') || 
+                    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  updateThemeIcon(savedTheme);
+  
+  themeToggle.addEventListener('click', function() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+  });
+  
+  function updateThemeIcon(theme) {
+    if (theme === 'dark') {
+      themeIcon.classList.remove('fa-moon');
+      themeIcon.classList.add('fa-sun');
+    } else {
+      themeIcon.classList.remove('fa-sun');
+      themeIcon.classList.add('fa-moon');
+    }
   }
   
   // Animate statistics counter - ANIMAÇÃO RÁPIDA
@@ -83,5 +112,73 @@ document.addEventListener('DOMContentLoaded', function() {
       navbar.style.backgroundColor = 'var(--dark-color)';
       navbar.style.backdropFilter = 'none';
     }
+  });
+  
+  // Botão Voltar ao Topo
+  const backToTopButton = document.getElementById('backToTop');
+  
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+      backToTopButton.classList.add('visible');
+    } else {
+      backToTopButton.classList.remove('visible');
+    }
+    
+    // Atualizar indicador de progresso
+    updateReadingProgress();
+  });
+  
+  backToTopButton.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  
+  // Indicador de progresso de leitura
+  function updateReadingProgress() {
+    const winHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.pageYOffset;
+    const trackLength = docHeight - winHeight;
+    const progress = Math.floor((scrollTop / trackLength) * 100);
+    
+    document.getElementById('readingProgress').style.width = progress + '%';
+  }
+  
+  // FAQ Accordion
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    
+    question.addEventListener('click', () => {
+      // Fechar todos os outros itens
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove('active');
+        }
+      });
+      
+      // Alternar o item atual
+      item.classList.toggle('active');
+    });
+  });
+  
+  // Animar elementos ao rolar
+  const animatedElements = document.querySelectorAll('.card, .prevention-item, .stat-item, .support-card, .testimonial-card');
+  
+  const animationObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = 'fadeIn 0.8s ease forwards';
+        animationObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  animatedElements.forEach(element => {
+    element.style.opacity = '0';
+    animationObserver.observe(element);
   });
 });
